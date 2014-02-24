@@ -29,49 +29,49 @@ if (isset($_SESSION['mid'])) {
         <td></td>
         </tr>
         <tr>
-        <td class="textbox"><? echo $locate ['109'] ?></td>
+        <td class="tabhead"><? echo $locate ['109'] ?></td>
         </tr>
         <tr>
         <td class="table-body"><? echo $_SESSION['na'] ?></td>
         </tr>
         <tr>
-        <td class="textbox"><? echo $locate ['110'] ?></td>
+        <td class="tabhead"><? echo $locate ['110'] ?></td>
         </tr>
         <tr>		
         <td class="table-body"><? echo $name ?></td>
         </tr>
         <tr>
-        <td class="textbox"><? echo $locate ['111'] ?></td>
+        <td class="tabhead"><? echo $locate ['111'] ?></td>
         </tr>
         <tr>		
         <td class="table-body"><? echo $geb ?></td>
         </tr>
         <tr>
-        <td class="textbox"><? echo $locate ['114'] ?></td>
+        <td class="tabhead"><? echo $locate ['114'] ?></td>
         </tr>
         <tr>		
         <td class="table-body"><? echo $street ?></td>
         </tr>
         <tr>
-        <td class="textbox"><? echo $locate ['113'] ?></td>
+        <td class="tabhead"><? echo $locate ['113'] ?></td>
         </tr>
         <tr>		
         <td class="table-body"><? echo $ort ?></td>
         </tr>
         <tr>		
-        <td class="textbox"><? echo $locate ['120'] ?></td>
+        <td class="tabhead"><? echo $locate ['120'] ?></td>
         </tr>
         <tr>
         <td class="table-body"><? echo $ber ?></td>
         </tr>
         <tr>
-        <td class="textbox"><? echo $locate ['108'] ?></td>
+        <td class="tabhead"><? echo $locate ['108'] ?></td>
         </tr>
         <tr>		
         <td class="table-body"><? echo $logrp ?></td>
         </tr>
         <tr>
-        <td class="textbox"><? echo $locate ['107'] ?></td>
+        <td class="tabhead"><? echo $locate ['107'] ?></td>
         </tr>
         <tr>		
         <td class="table-body"><? echo $lo ?></td>

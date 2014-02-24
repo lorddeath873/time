@@ -4,10 +4,10 @@ error_reporting(E_ALL);
 // Locate config.php and set the basedir path
 $folder_level = "./";
 $i = 0;
-if (is_dir("install")) {
+/*if (is_dir("install")) {
     echo "Bitte löschen, Sie den Install Ordner";
     exit;
-}
+}*/
 require "config.inc.php";
 // Calculate current true url
 $script_url = explode("/", $_SERVER['PHP_SELF']);
@@ -55,13 +55,18 @@ echo "<table class='outer-border' id='main'><tr><td><table width='100%'><tr><td 
 echo "<table width='100%'><tr>\n";
 echo'<table width="100%"><tr><td class="side-border-left" valign="top"><table width="100%" class="border tablebreak"><tr><td class="scapmain">'.$locate['401'].'</td></tr><tr><td colspan="2" class="side-body"><div id="navigation"><ul><li class="first-link"><a href="index.php" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Startseite</span></a></li>';
 if (isset($_SESSION['mid'])) {
-    echo '<li><a href="index.php?site=req&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Erfassung</span></a></li><li><a href="index.php?site=prof&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Profil</span></a></li><li><a href="index.php?site=out&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Auswertung</span></a></li><li><a href="index.php?site=lout&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Logout</span></a></li>';
+    echo '<li><a href="index.php?site=req&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Erfassung</span></a></li>
+	<li><a href="index.php?site=prof&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Profil</span></a></li>
+	<li><a href="index.php?site=out&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Auswertung</span></a></li>
+	<li><a href="index.php?site=ua&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Urlaubsantrag</span></a></li>
+	<li><a href="index.php?site=lout&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Logout</span></a></li>';
 }
 echo'<li><a href="index.php?site=faq" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>FAQ</span></a></li>';
 if ($_SESSION['usgrp'] == "2" OR $_SESSION['usgrp'] == "1") {
     echo '<li><a href="index.php?site=erf&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Mitarbeiter Registration</span></a></li>
     <li><a href="index.php?site=mal" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Mitarbeiter Liste</span></a></li>
     <li><a href="index.php?site=fal" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Firmen Liste</span></a></li>
+	<li><a href="index.php?site=uag&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Urlaubsanträge</span></a></li>
     <li><a href="index.php?site=erff&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Firmen Registration</span></a></li>';
 }
 echo '</ul></div></td></tr></table>
@@ -111,6 +116,12 @@ if ($_GET['site'] == "erff" AND $_GET['user'] == $_SESSION['mid']) {
 }
 if ($_GET['site'] == "req" AND $_GET['user'] == $_SESSION['mid']) {
     include INC."reg.php";
+}
+if ($_GET['site'] == "ua" AND $_GET['user'] == $_SESSION['mid']) {
+    include INC."ua.php";
+}
+if ($_GET['site'] == "uag" AND $_GET['user'] == $_SESSION['mid']) {
+    include INC."uag.php";
 }
 if ($_GET['site'] == "out") {
     include INC."out.php";

@@ -1,8 +1,7 @@
 ﻿<?php
-error_reporting(E_ALL);
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
 $allowedfiletype = array('png', 'gif', 'jpg', 'jpeg'); // Bild-Upload Dateitypen erlauben
 //Ab hier nichts mehr ändern!!!
-error_reporting(E_ALL & ~E_NOTICE);
 require_once ('function.inc.php');
 $allowed_langs = array ('de', 'en');
 
@@ -26,7 +25,7 @@ define("DB_SITE_LINKS", "site_links");
 define("USR", "usr_login");
 define("UIM", BASEDIR."usr/");
 define("FA", "firmen");
-define("WO", "work");
+define("UL", "urlaub");
 define("SE", "settings");
 include INC."dbconn.inc.php";
 define("DB", $db);

@@ -1,7 +1,7 @@
 <?php
 $timestamp = time();
 $da = date("Y.m.d", $timestamp);
-$uh = date("H:i:s", $timestamp);
+$uh = date("H:i", $timestamp);
 $dae = date("d.m.Y", $timestamp);
 if (isset($_SESSION['mid'])) {
 	$stmt = $mysqli->prepare("SELECT awo FROM ".USR." WHERE ma = ? LIMIT 1");
@@ -44,34 +44,18 @@ if (isset($_SESSION['mid'])) {
         }
     }
 	$stmt->close();
-	$stmt = $mysqli->prepare("SELECT id, work FROM ".WO."");
-	$stmt->execute();
-	$result = $stmt->get_result();
-    if (!check_data($result)){
-        echo '<table class="outer-border" id="main"><tr><td class="failure">'.$locate['160'].'</td></tr></table>';
-    } else {
-        while ($wo = $result->fetch_array()) {
-            $selew.='<option value ='.$wo['id'].'>'.$wo['work'].'</option>';
-        }
-    }
-	$stmt->close();
     ?>
     <form method="post" action="<? $_SERVER['PHP_SELF']; ?>">
     <table class='outer-border' id='main'>
     <tr>
-    <td class="textbox"><? echo $locate['105']; ?></td>
-    <td class="table-body"><input type="text" name="ma" value="<?echo $_SESSION['mid'] ?>" readonly="readonly"/></td>
+    <td class="tabhead"><? echo $locate['105']; ?></td>
+    <td class="table-body"><input type="text" name="ma" value="<? echo $_SESSION['mid'] ?>" readonly="readonly"/></td>
     <td class="textbox"><? echo $locate['100']; ?></td>
     </tr>
     <tr>
-    <td class="textbox"><? echo $locate['149']; ?></td>
+    <td class="tabhead"><? echo $locate['149']; ?></td>
     <td class="table-body"><select name="sel"><? echo $sele ?></select></td>
     <td class="textbox"><? echo $locate['141']; ?></td>
-    </tr>
-    <tr>
-    <td class="textbox"><? echo $locate['159']; ?></td>
-    <td class="table-body"><select name="selw"><? echo $selew ?></select></td>
-    <td class="textbox"><? echo $locate['158']; ?></td>
     </tr>
     <tr>
     <td class="table-body"><input type="submit" class="button" name="submit" value="Start"/></td>
@@ -81,7 +65,6 @@ if (isset($_SESSION['mid'])) {
     </form>
     <?php
     if (isset($_REQUEST['submit'])) {
-        $_SESSION['wid'] = $_POST['selw'];
 		$awo = "1";
 		$stmt = $mysqli->prepare("UPDATE ".USR." SET awo = ? WHERE ma = ? LIMIT 1");
 		$stmt->bind_param('ii', $awo, $_SESSION['mid']);
@@ -89,9 +72,8 @@ if (isset($_SESSION['mid'])) {
 		$stmt->close();
 		$ma = $_POST['ma'];
 		$sel = $_POST['sel'];
-		$selw = $_POST['selw'];
-		$stmt = $mysqli->prepare("INSERT INTO tt".$_SESSION['mid']." (ma, fid, start, work) VALUES (?, ?, ?, ?)");
-		$stmt->bind_param('iiss', $ma, $sel, $timestamp, $selw);
+		$stmt = $mysqli->prepare("INSERT INTO tt".$_SESSION['mid']." (ma, fid, start) VALUES (?, ?, ?)");
+		$stmt->bind_param('iis', $ma, $sel, $timestamp);
 		$stmt->execute();
 		$stmt->close();
         echo '<table class="outer-border" id="main"><tr><td class="textbox"><h2>'.$locate['163'].$dae.' um '.$uh.' Uhr</h2></td></tr></table>';

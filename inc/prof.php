@@ -1,6 +1,6 @@
 ﻿<?php
 if (isset($_SESSION['mid'])) {
-	$stmt = $mysqli->prepare("SELECT ber, logrp, lo, surname, geb, street, ort, imgs, url, reurl, tel, mob FROM ".USR." WHERE ma = ? LIMIT 1");
+	$stmt = $mysqli->prepare("SELECT id, ber, logrp, lo, surname, geb, street, ort, imgs, url, reurl, tel, mob FROM ".USR." WHERE ma = ? LIMIT 1");
 	$stmt->bind_param('i', $_SESSION['mid']);
 	$stmt->execute();
 	$result = $stmt->get_result();
@@ -31,81 +31,81 @@ if (isset($_SESSION['mid'])) {
         <tr>    <td> <img src="<? echo $img ?>" alt="img" width="150" height="150"/></td>
         </tr>
         <tr>
-		        <td class="table-body"><input name="image" type="file"></td>
+		        <td class="table-body"><input class="button" name="image" type="file"></td>
         </tr>
         <tr>
 		        <td class="table-body"><input class="button" name="submit" type="submit" value="Hochladen" /></td>
         </tr>
 
         <tr>
-		        <td class="textbox"><? echo $locate ['109'] ?></td>
+		        <td class="tabhead"><? echo $locate ['109'] ?></td>
         </tr>
         <tr>
 		        <td class="table-body"><? echo $_SESSION['na'] ?></td>
         </tr>
         <tr>
-		        <td class="textbox"><? echo $locate ['110'] ?></td>
+		        <td class="tabhead"><? echo $locate ['110'] ?></td>
         </tr>
         <tr>		
 		        <td class="table-body"><? echo $name ?></td>
         </tr>
         <tr>
-		        <td class="textbox"><? echo $locate ['111'] ?></td>
+		        <td class="tabhead"><? echo $locate ['111'] ?></td>
         </tr>
         <tr>		
 		        <td class="table-body"><? echo $geb ?></td>
         </tr>
         <tr>
-		        <td class="textbox"><? echo $locate ['114'] ?></td>
+		        <td class="tabhead"><? echo $locate ['114'] ?></td>
         </tr>
         <tr>		
 		        <td class="table-body"><? echo $street ?></td>
         </tr>
         <tr>
-		        <td class="textbox"><? echo $locate ['113'] ?></td>
+		        <td class="tabhead"><? echo $locate ['113'] ?></td>
         </tr>
         <tr>		
 		        <td class="table-body"><? echo $ort ?></td>
         </tr>
 
         <tr>		
-		        <td class="textbox"><? echo $locate ['120'] ?></td>
+		        <td class="tabhead"><? echo $locate ['120'] ?></td>
         </tr>
         <tr>
 		        <td class="table-body"><? echo $ber ?></td>
         </tr>
         <tr>
-		        <td class="textbox"><? echo $locate ['108'] ?></td>
+		        <td class="tabhead "><? echo $locate ['108'] ?></td>
         </tr>
         <tr>		
 		        <td class="table-body"><? echo $logrp ?></td>
         </tr>
         <tr>
-		        <td class="textbox"><? echo $locate ['107'] ?></td>
+		        <td class="tabhead"><? echo $locate ['107'] ?></td>
         </tr>
         <tr>		
 		        <td class="table-body"><? echo $lo ?></td>
         </tr>
         <tr>
-		        <td class="textbox"><? echo $locate ['139'] ?></td>
+		        <td class="tabhead"><? echo $locate ['139'] ?></td>
         </tr>
         <tr>		
 		        <td class="table-body"><? echo $ul ?></td>
         </tr>
         <tr>
-		        <td class="textbox"><? echo $locate ['140'] ?></td>
+		        <td class="tabhead"><? echo $locate ['140'] ?></td>
         </tr>
         <tr>		
 		        <td class="table-body"><? echo $rul ?></td>
         </tr>
         <tr>
-		        <td class="textbox"><? echo $locate ['115'] ?></td>
+		        <td class="tabhead"><? echo $locate ['115'] ?></td>
         </tr>
         <tr>		
 		        <td class="table-body"><? echo $tel ?></td>
         </tr>
         <tr>
-		        <td class="textbox"><? echo $locate ['116'] ?></td>
+		        <td class="tabhead"><? echo $locate ['116'] ?></td>
         </tr>
         <tr>		
 		        <td class="table-body"><? echo $mob ?></td>

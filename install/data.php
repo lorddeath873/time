@@ -64,13 +64,13 @@ if ($_REQUEST['submit']) {
         if (!$db_erg) {
             echo '<table class="outer-border" id="hori"><tr><td class="failure"> Fehler beim Speichern der Tabelle settings; Fehler bitte mit senden: '.mysql_error().' bitte wenden Sie sich an <a href="mailto:support@nolimitgerman.de">NoLimitGerman.de</td></table>';
         }
-        $db_erg=mysql_query("CREATE TABLE usr_login (id int(10) NOT NULL auto_increment, ma varchar(255) NOT NULL, pw varchar(255) NOT NULL, lo varchar(255) NOT NULL, logrp varchar(255) NOT NULL, name varchar(255) NOT NULL, surname varchar(255) NOT NULL, geb varchar(255) NOT NULL, ein varchar(255) NOT NULL, aus varchar(255) NOT NULL, street varchar(255) NOT NULL, plz varchar(255) NOT NULL, tel varchar(255) NOT NULL, mob varchar(255) NOT NULL, ort varchar(255) NOT NULL, url varchar(255) NOT NULL, reurl varchar(255) NOT NULL, usrgrp longblob NOT NULL, ber varchar(255) NOT NULL, me varchar(255) NOT NULL, mail varchar(255) NOT NULL, imgs longblob NOT NULL, fid varchar(255) NOT NULL, awo varchar(255) NOT NULL, PRIMARY KEY (id) );");
+        $db_erg=mysql_query("CREATE TABLE usr_login (id int(10) NOT NULL auto_increment, ma varchar(255) NOT NULL, pw varchar(255) NOT NULL, lo varchar(255) NOT NULL, logrp varchar(255) NOT NULL, name varchar(255) NOT NULL, surname varchar(255) NOT NULL, geb varchar(255) NOT NULL, ein varchar(255) NOT NULL, aus varchar(255) NOT NULL, street varchar(255) NOT NULL, plz varchar(255) NOT NULL, tel varchar(255) NOT NULL, mob varchar(255) NOT NULL, ort varchar(255) NOT NULL, url varchar(255) NOT NULL, reurl varchar(255) NOT NULL, usrgrp longblob NOT NULL, ber varchar(255) NOT NULL, me varchar(255) NOT NULL, mail varchar(255) NOT NULL, imgs longblob NOT NULL, fid varchar(255) NOT NULL, awo int(1) NOT NULL, uestd varchar(10) NOT NULL, soll varchar(4) NOT NULL, PRIMARY KEY (id) );");
         if (!$db_erg) {
             echo '<table class="outer-border" id="hori"><tr><td class="failure"> Fehler beim Speichern der Tabelle usr_login; Fehler bitte mit senden: '.mysql_error().' bitte wenden Sie sich an <a href="mailto:support@nolimitgerman.de">NoLimitGerman.de</td></table>';
         }
-        $db_erg=mysql_query("CREATE TABLE work (id int(10) NOT NULL auto_increment, work varchar(255) NOT NULL, fid varchar(255) NOT NULL, PRIMARY KEY (id) );");
+		$db_erg=mysql_query("CREATE TABLE urlaub (id int(10) NOT NULL auto_increment, ma int(10) NOT NULL, von varchar(255) NOT NULL, bis varchar(255) NOT NULL, ges varchar(255) NOT NULL, gen int(1) NOT NULL, me int(1) NOT NULL, PRIMARY KEY (id) );");
         if (!$db_erg) {
-            echo '<table class="outer-border" id="hori"><tr><td class="failure"> Fehler beim Speichern der Tabelle work; Fehler bitte mit senden: '.mysql_error().' bitte wenden Sie sich an <a href="mailto:support@nolimitgerman.de">NoLimitGerman.de</td></table>';
+            echo '<table class="outer-border" id="hori"><tr><td class="failure"> Fehler beim Speichern der Tabelle Urlaub; Fehler bitte mit senden: '.mysql_error().' bitte wenden Sie sich an <a href="mailto:support@nolimitgerman.de">NoLimitGerman.de</td></table>';
         }
         ?>
         <form method="post" action="<? $_SERVER['PHP_SELF'] ?>">
