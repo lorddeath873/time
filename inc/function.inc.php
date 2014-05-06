@@ -42,45 +42,15 @@ function lang_getfrombrowser ($allowed_languages, $default_language, $lang_varia
     return $current_lang;
 }
 
-function date_differ($d1, $d2)
-{
-    if ($d1 < $d2) {
-        $temp = $d2;
-        $d2 = $d1;
-        $d1 = $temp;
-    } else {
-        $temp = $d1;
-    }
-    $d1 = date_parse(date("Y-m-d H:i", $d1));
-    $d2 = date_parse(date("Y-m-d H:i", $d2));
-    if ($d1['minute'] >= $d2['minute']) {
-        $diff['minute'] = $d1['minute'] - $d2['minute'];
-    } else {
-        $d1['hour']--;
-        $diff['minute'] = 60-$d2['minute']+$d1['minute'];
-    }
-    if ($d1['hour'] >= $d2['hour']) {
-        $diff['hour'] = $d1['hour'] - $d2['hour'];
-    } else {
-        $d1['day']--;
-        $diff['hour'] = 24-$d2['hour']+$d1['hour'];
-    }
-    if ($d1['day'] >= $d2['day']) {
-        $diff['day'] = $d1['day'] - $d2['day'];
-    } else {
-        $d1['month']--;
-        $diff['day'] = date("t", $temp)-$d2['day']+$d1['day'];
-    }
-    if ($d1['month'] >= $d2['month']) {
-        $diff['month'] = $d1['month'] - $d2['month'];
-    } else {
-        $d1['year']--;
-        $diff['month'] = 12-$d2['month']+$d1['month'];
-    }
-    $diff['year'] = $d1['year'] - $d2['year'];
-    return $diff;
-}
+function diff_time($differenz) 
+   {   
+   $tag  = floor($differenz / (3600*24)); 
+   $std  = floor($differenz / 3600 % 24); 
+   $min  = floor($differenz / 60 % 60); 
+   $sek  = floor($differenz % 60); 
 
+   return array("sek"=>$sek,"min"=>$min,"std"=>$std,"tag"=>$tag,"woche"=>$woche); 
+   } 
 class XTEA{
 
     var $key;

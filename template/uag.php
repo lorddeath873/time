@@ -1,15 +1,13 @@
 <?
 if ($_GET['site'] == "uag") {
 	?>
-	Ihnen wird hier der Urlaub Ihrer jeweiligen Mitarbeiter angezeigt: <br /><br />
-	<hr />
+    <div class="legen">
+	<br />
 	Legende
 	<hr />
-	<ul>
-	<li>- Genehmigen: Urlaub noch nicht genehmigt</li>
-	<li>- Genehmigen mit durchgestrichenem Text: Urlaub wurde zuvor gestrichen </li>
-	<li>- Streichen: Urlaub wird gestrichen</li>
-	<li>- Löschen: Erscheint erst nach Ablauf des Urlaubes, Datensatz wird gelöscht</li>
-	</ul>
+	- Genehmigen: Urlaub/Überstunden noch nicht genehmigt<br />
+    - Genehmigen mit durchgestrichenem Text: Urlaub/Überstunden wurde zuvor gestrichen <br />
+    - Streichen: Urlaub/Überstunden wird gestrichen <em><strong>(Warnung)!!! Urlaub wird am Monatsende gut geschrieben !!!</strong></em><br />
+    <div>
 <?
 }

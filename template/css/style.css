@@ -314,3 +314,16 @@ li {
 .editable:hover{
     color:#FFFF33; background-color: #00f;
 }
+.legen, hr {
+	border-style: double;
+	border-radius:10px; border-color:#F00;
+	font-family:"Times New Roman", Times, serif;
+	font-size:14px;
+	text-align:center;
+	text-shadow:inherit;
+	color:#FFF; background-color:transparent;
+}
+em {
+	color:#F00;
+	font-size:18px;
+}
