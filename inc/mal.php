@@ -3,7 +3,7 @@ if ($_SESSION['usgrp'] == "1" OR $_SESSION['usgrp'] == "2") {
 	if (isset($erg) or isset($ergd)) {
 		echo '<table class="outer-border" id="main"><tr><td class="failure">'.$erg.'<br>'.$ergd.'</td></tr></table>';
 	}
-	$id = '0';
+	$id = '1';
 	$stmt = $mysqli->prepare("SELECT id, name, surname, geb, street, plz, ort, tel, mob, logrp, lo, ber, mail FROM ".USR." WHERE me = ? AND NOT id = ? ORDER BY surname DESC");
 	$stmt->bind_param('ii', $_SESSION['mid'], $id);
 	$stmt->execute();
@@ -23,7 +23,7 @@ if ($_SESSION['usgrp'] == "1" OR $_SESSION['usgrp'] == "2") {
         echo '<td class="textbox center editable" id="'.$urs['id'].'.lo.usr_login">'.$urs['lo'].'</td>';
         echo '<td class="textbox center editable" id="'.$urs['id'].'.ber.usr_login">'.$urs['ber'].'</td>';
         echo '<td class="textbox center editable" id="'.$urs['id'].'.mail.usr_login">'.$urs['mail'].'</td>';
-		//echo '<form action="'.$_SERVER['PHP_SELF'].'?site=mal" name="deluser" method="post"><td class="table-body"><input type="hidden" name="del" value="'.$urs['id'].'"><input type="image" src="'.IMG.'x.jpg" width="30px" height="30px"></form><td>';
+		echo '<form action="'.$_SERVER['PHP_SELF'].'?site=mal" name="deluser" method="post"><td class="table-body"><input type="hidden" name="del" value="'.$urs['id'].'"><input type="image" src="'.IMG.'x.jpg" width="30px" height="30px"></form><td>';
         echo '</tr>';
     }
 	$stmt->close();

@@ -7,6 +7,11 @@ $allowed_langs = array ('de', 'en');
 
 $lang = lang_getfrombrowser($allowed_langs, 'de', null, false);
 $lng=$lang;
+if ($lng == 'de') {
+	setlocale(LC_TIME, 'de_DE.utf8');
+} else {
+	setlocale(LC_TIME, 'C');
+}
 while (!file_exists($folder_level."/inc/config.inc.php")) {
     $folder_level .= "../";
     $i++;
@@ -32,7 +37,6 @@ define("DB", $db);
 $stmt=$mysqli->prepare("SELECT * FROM ".DB.".".SE."");
 $stmt->execute();
 $result=$stmt->get_result();
-//$nl_sqll="SELECT * FROM ".DB.".".SE."";
 while ($se = $result->fetch_array()) {
     $heimg = $se['heimg'];
     $sub = $se['sub'];

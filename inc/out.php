@@ -1,7 +1,6 @@
 <?php
 if (isset($_SESSION['mid'])) {
 	$id = $_SESSION['mid'];
-	setlocale(LC_TIME, 'de_DE.utf8');
 	echo '<div align="left">';
 	include TEMPLATE."out.php";
 	echo '</div>';

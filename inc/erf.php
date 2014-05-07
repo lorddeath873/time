@@ -145,6 +145,11 @@ if ($_SESSION['usgrp'] == "1" OR $_SESSION['usgrp'] == "2" && isset($_SESSION['m
     <td class="table-body"><input name="mail" type="text" maxlength="255"></td>
     <td class="textbox"><? echo $locate ['124'] ?></td>
     </tr>
+	<tr>
+    <td class="tabhead"><? echo $locate ['170'] ?></td>
+    <td class="table-body"><input name="gemon" type="text" maxlength="255"></td>
+    <td class="textbox"><? echo $locate ['195'] ?></td>
+    </tr>
     <tr>
     <td class="table-body"><input class="button" name="ok" type="submit" value="Speichern" /></td></tr>
     </table>
@@ -160,9 +165,9 @@ if ($_SESSION['usgrp'] == "1" OR $_SESSION['usgrp'] == "2" && isset($_SESSION['m
 		if ($mysqli->query("CREATE TABLE IF NOT EXISTS ".$dat." (id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY, ma  VARCHAR(255), fid VARCHAR(255), start VARCHAR(255), work VARCHAR(255), end VARCHAR(255), date  DATE NOT NULL, edat DATE NOT NULL) ENGINE=MYISAM;") === true) {
         echo '<table class="outer-border" id="main"><tr><td class="failure">'.$locate['165'].'</td></tr></table>';
 		}
-		$stmt = $mysqli->prepare("INSERT INTO usr_login (ma, pw, lo, logrp, name, surname, geb, ein, aus, street, plz, tel, mob, ort, url, reurl, usrgrp, ber, me, mail, fid, awo, uestd, soll) 
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-		$stmt->bind_param('ssssssssssissssssssss',$_POST['ma'], $pwm5, $_POST['lo'], $_POST['logrp'], $_POST['name'], $_POST['surname'], $_POST['geb'], $_POST['ein'], $_POST['aus'], $_POST['street'], $_POST['plz'], $_POST['tel'], $_POST['mob'], $_POST['ort'], $_POST['url'], $_POST['reurl'], $_POST['usrgrp'], $_POST['ber'], $_POST['me'], $_POST['mail'], $_POST['fid'], $uestd, $uestd, $soll);
+		$stmt = $mysqli->prepare("INSERT INTO usr_login (ma, pw, lo, logrp, name, surname, geb, ein, aus, street, plz, tel, mob, ort, url, reurl, usrgrp, ber, me, mail, fid, awo, uestd, soll, sollmonth) 
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		$stmt->bind_param('ssssssssssissssssssssssss',$_POST['ma'], $pwm5, $_POST['lo'], $_POST['logrp'], $_POST['name'], $_POST['surname'], $_POST['geb'], $_POST['ein'], $_POST['aus'], $_POST['street'], $_POST['plz'], $_POST['tel'], $_POST['mob'], $_POST['ort'], $_POST['url'], $_POST['reurl'], $_POST['usrgrp'], $_POST['ber'], $_POST['me'], $_POST['mail'], $_POST['fid'], $uestd, $uestd, $soll, $_POST['gemon']);
 		$stmt->execute();
 		$stmt->close();
         echo '<table class="outer-border" id="main"><tr><td class="failure">'.$locate['157'].'</td></tr></table>';

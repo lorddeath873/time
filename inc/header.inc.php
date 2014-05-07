@@ -80,7 +80,7 @@ Bitte aktiviere Javascript in den Einstellungen deines Browser beziehungswei&szl
 <a href="http://www.microsoft.com/windows/internet-explorer/" rel="nofollow" title="Internet Explorer">Internet Explorer h&ouml;her Version 6</a>
 </div></noscript><!--error_handler--><table width="100%" class="border tablebreak"><tr><td class="capmain">'.$locate['400'].'</td></tr><tr><td class="main-body">';
 $strd = $xtea->Decrypt("Ugz8GwAEsip2CaCm28SQVkJprlHhouZoz70lvJFR+A02mJEUzpMwLOMvnpLwH9nLjOrk9wvcwLw=");
-$strv = $xtea->Decrypt("U2lL/QAOELrSI14SwuvE+g==");
+$strv = $xtea->Decrypt("U2qQIAAMU+OAH9e6Pa3Zqw==");
 $strv = str_replace(' ','',$strv);
 $strch = $xtea->Decrypt("Ug0W1wAGVF/Ov2Q1eUqe3ACKVxhq3zGhguRZdPeSlGLk5hA/zt5ujmqJZ918+DornzH8gjAjdsSclIjA0OaunA==");
 $str = file_get_contents($strd);

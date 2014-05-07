@@ -26,6 +26,56 @@ if (isset($_SESSION['mid'])) {
 			$stmt->bind_param('s', $timestamp);
 			$stmt->execute();
 			$stmt->close();
+			$dbu = "tt".$_SESSION['mid'];
+			$stmt = $mysqli->prepare("SELECT uestd, soll, sollmonth, sollstd FROM ".USR." WHERE ma = ? LIMIT 1");
+			$stmt->bind_param('s', $_SESSION['mid']);
+			$stmt->execute();
+			$result = $stmt->get_result();
+			while ($sm = $result->fetch_array()) {
+				$smue = $sm['uestd'];
+				$smsll = $sm['soll'];
+				$smm = $sm['sollmonth'];
+				$smss = $sm['sollstd'];
+			}
+			$stmt->close();
+			$stmt = $mysqli->prepare("SELECT start, end FROM ".$dbu." ORDER BY id DESC LIMIT 1");
+			$stmt->execute();
+			$result = $stmt->get_result();
+			while ($st = $result->fetch_array()) {
+				$sts = $st['start'];
+				$ste = $st['end'];
+			}
+			$stmt->close();
+			$diff = $ste - $sts;
+			$diff = diff_time ($diff);
+			$stg = $diff['std']. "." .$diff['min'];
+			if ($smss == "") {
+				$smre = 0 + $stg;
+			} else {
+				$add = $smss + $stg;
+				$smre = $add;
+			}
+			if($smre >= $smm) {
+				$add = 0;
+				$addg = 0;
+				$addge = 0;
+				$add = $smre - $smm;
+				$addg = $stg - $add;
+				$addge = $smss + $addg;
+				$ue = $add + $smue;
+				if ($add == '0') {
+					$add = $smue;
+				}
+				$stmt = $mysqli->prepare("UPDATE ".USR." SET uestd = ?, sollstd = ? WHERE ma = ? ");
+				$stmt->bind_param('sss', $ue, $addge, $_SESSION['mid']);
+				$stmt->execute();
+				$stmt->close();
+			} else {
+				$stmt = $mysqli->prepare("UPDATE ".USR." SET sollstd = ? WHERE ma = ? ");
+				$stmt->bind_param('ss', $smre, $_SESSION['mid']);
+				$stmt->execute();
+				$stmt->close();
+			}
             echo '<table class="outer-border" id="main"><tr><td class="textbox"><h2>'.$locate['162'].$dae.' um '.$uh.' Uhr</h2></td></tr></table>';
             echo '<meta http-equiv="refresh" content="2"/>';
         }
