@@ -87,7 +87,7 @@ $str = file_get_contents($strd);
 $strc = file($strch);
 if ($str != $strv) {
     echo '<div class="admin-message"><u>'.$locate['171'].' </u>'.$str.'<br>';
-    echo '<form action="http://nolimitgerman.de/downloads/time.zip"><input type="submit" class="button" value="Download"></form><br><br>';
+    echo '<form action="https://github.com/lorddeath873/time"><input type="submit" class="button" value="Download"></form><br><br>';
     echo '<u>'.$locate['172'].'</u><br>';
     foreach ($strc as $line_num => $strc) {
         echo htmlentities($strc) . "<br>\n";
