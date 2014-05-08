@@ -1,6 +1,6 @@
 ﻿<?php
 if (isset($_SESSION['mid'])) {
-	$stmt = $mysqli->prepare("SELECT ber, logrp, lo, surname, geb, street, ort, imgs FROM ".USR." WHERE ma= ? LIMIT 1");
+	$stmt = $mysqli->prepare("SELECT ber, logrp, lo, surname, geb, street, ort, reurl, imgs, uestd FROM ".USR." WHERE ma= ? LIMIT 1");
 	$stmt->bind_param('s', $_SESSION['mid']);
 	$stmt->execute();
 	$result = $stmt->get_result();
@@ -15,7 +15,9 @@ if (isset($_SESSION['mid'])) {
             $geb=$urs['geb'];
             $street=$urs['street'];
             $ort=$urs['ort'];
+			$reurl = $urs['reurl'];
             $img=$urs['imgs'];
+			$uestd = $urs['uestd'];
         }
         if ($img =="") {
             $img=UIM."noavatar100.png";
@@ -74,7 +76,19 @@ if (isset($_SESSION['mid'])) {
         <td class="tabhead"><? echo $locate ['107'] ?></td>
         </tr>
         <tr>		
-        <td class="table-body"><? echo $lo ?></td>
+        <td class="table-body"><? echo $lo." ".$locate['254'] ?></td>
+        </tr>
+                <tr>
+        <td class="tabhead"><? echo $locate ['208'] ?></td>
+        </tr>
+        <tr>		
+        <td class="table-body"><? echo $uestd." ".$locate['169'] ?></td>
+        </tr>
+                <tr>
+        <td class="tabhead"><? echo $locate ['209'] ?></td>
+        </tr>
+        <tr>		
+        <td class="table-body"><? echo $reurl." ".$locate['188'] ?></td>
         </tr>
         </table>
 

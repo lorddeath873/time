@@ -13,7 +13,7 @@ if (isset($_SESSION['mid'])) {
     }
 	$stmt->close();
     if ($awos == "1") {
-        echo '<form method="post" action="'.$_SERVER['REQUEST_URI'].'"><table class="outer-border" id="main"><tr><td class="failure">'.$locate['161'].'</td><td class="table-body"><input type="submit" class="button" name="esub" value="Ende"/></td></tr></table></form>';
+        echo '<form method="post" action="'.$_SERVER['REQUEST_URI'].'"><table class="outer-border" id="main"><tr><td class="failure">'.$locate['161'].'</td><td class="table-body"><input type="submit" class="button" name="esub" value="'.$locate['168'].'"/></td></tr></table></form>';
         if (isset($_REQUEST['esub'])) {
 			$z ="0";
 			$stmt = $mysqli->prepare("UPDATE ".USR." SET awo = ? WHERE ma = ? LIMIT 1");
@@ -108,7 +108,7 @@ if (isset($_SESSION['mid'])) {
     <td class="textbox"><? echo $locate['141']; ?></td>
     </tr>
     <tr>
-    <td class="table-body"><input type="submit" class="button" name="submit" value="Start"/></td>
+    <td class="table-body"><input type="submit" class="button" name="submit" value="<? echo $locate['167'] ?>"/></td>
     <td></td>
     </tr>
     </table>

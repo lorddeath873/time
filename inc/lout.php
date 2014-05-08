@@ -1,5 +1,5 @@
 <?php
 session_destroy();
 ?>
-Sie wurden erfolgreich ausgeloggt
+<? echo $locate['242'] ?>
 <meta http-equiv="refresh" content="1; URL=./index.php">

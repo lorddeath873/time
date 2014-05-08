@@ -151,7 +151,7 @@ if ($_SESSION['usgrp'] == "1" OR $_SESSION['usgrp'] == "2" && isset($_SESSION['m
     <td class="textbox"><? echo $locate ['195'] ?></td>
     </tr>
     <tr>
-    <td class="table-body"><input class="button" name="ok" type="submit" value="Speichern" /></td></tr>
+    <td class="table-body"><input class="button" name="ok" type="submit" value="<? echo $locate['243'] ?>" /></td></tr>
     </table>
     </form>
 
@@ -173,10 +173,10 @@ VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 
         echo '<table class="outer-border" id="main"><tr><td class="failure">'.$locate['157'].'</td></tr></table>';
 		//Bearbeitbar
         $empfaenger = $_POST['mail'];
-        $betreff    = "Ihre Login-Daten bei ".$fma;
+        $betreff    = $locate['244']."".$fma;
         $mailtext = "<img src=http://".$_SERVER['HTTP_HOST']."/".IMG.$heimg."><br><br>";
-        $mailtext   .= "Sehr geehrte/r Frau/Herr ".$_POST['name'].",<br><br>";
-        $mailtext   .= "hiermit &uuml;bermitteln wir Ihnen Ihre Login-Daten auf ".$addrr.":<br> <table><tr><td><u>".$locate['105'].":</u></td><td>".$_POST['ma']."</td></tr><table><tr><td><u>".$locate['106'].":</u></td><td>".$_POST['pw']."</td></tr></table><br><br> Absofort k&ouml;nnen Sie Ihre Arbeitszeit Online festhalten<br><br> Ihr ".$fma."-Team<br>";
+        $mailtext   .= $locate['237']."".$_POST['name'].",<br><br>";
+        $mailtext   .= $locate['245']."".$addrr.":<br> <table><tr><td><u>".$locate['105'].":</u></td><td>".$_POST['ma']."</td></tr><table><tr><td><u>".$locate['106'].":</u></td><td>".$_POST['pw']."</td></tr></table><br><br>".$locate['246']."<br><br>".$locate['247']."".$fma."".$locate['248']."<br>";
         $mailtext .= $footer;
         $absender   = $fma." <".$maa.">";
         $headers   = array();

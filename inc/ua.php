@@ -15,14 +15,14 @@ if (isset($_SESSION['mid'])) {
 		$mess = $locate['194'];
 	} else {
 		$rbutt = '<input type="radio" name="url" value="url">';
-		$mess = ' Sie haben noch: '.$reurl['reurl'].' Tag(e) Urlaub zur Verfügung';
+		$mess = $locate['225'].''.$reurl['reurl'].''.$locate['226'];
 	}
 	if ($reurl['uestd'] == "0" or $reurl['uestd'] < $reurl['soll'] ) {
 		$rbuett = '<input type="radio" disabled >' ;
-		$muess = ' Sie haben leider keine Überstunden mehr zur Verfügung';
+		$muess = $locate['227'];
 	} else {
 		$rbuett = '<input type="radio" name="url" value="uestd">';
-		$muess = ' Sie haben noch: '.$reurl['uestd'].' Überstunde(n) zur Verfügung';
+		$muess = $locate['225'].''.$reurl['uestd'].''.$locate['228'];
 	}
 	$geurl = $reurl['url'];
 	$reurlg = $reurl['reurl'];
@@ -36,7 +36,7 @@ if (isset($_SESSION['mid'])) {
 	?>
 
 	<form action="./index.php?site=ua&user=<? echo $_SESSION['mid'] ?>" method="post">
-	<table class="outer-border" id="main"><tr><td class="tabhead"> Bitte wählen Sie: </td></tr>
+	<table class="outer-border" id="main"><tr><td class="tabhead"> <? echo $locate['229'] ?> </td></tr>
 	<tr>
     <td class="table-body"> <? echo $rbutt ?> </td>
     <td class="textbox"> <? echo $mess ?> </td>
@@ -55,7 +55,7 @@ if (isset($_SESSION['mid'])) {
     </tr>
     <input type="hidden" name="maue" value="<? echo $_SESSION['mid'] ?>">
     <tr>
-    <td class="table-body"> <input type="submit" class="button" value="Antrag Abschicken" name="aa" <? echo $abbutt ?>></td>
+    <td class="table-body"> <input type="submit" class="button" value="<? echo $locate['230'] ?>" name="aa" <? echo $abbutt ?>></td>
     </tr>
     </table>
     </form>
@@ -66,18 +66,18 @@ if (isset($_SESSION['mid'])) {
 	$stmt->bind_param('i', $ma);
 	$stmt->execute();
 	$rs = $stmt->get_result();
-	echo '<table class="outer-border" id="main"><tr><td class="tabhead"> Von: </td><td class="tabhead"> Bis: </td><td class="tabhead"> Gesamt(Tage/Stunden): </td><td class="tabhead"> Genehmigt? </td></tr>';
+	echo '<table class="outer-border" id="main"><tr><td class="tabhead"> Von: </td><td class="tabhead">' .$locate['185']. '</td><td class="tabhead">' .$locate['231']. '</td><td class="tabhead">' .$locate['232']. '</td></tr>';
 	while ($rst = $rs->fetch_array()) {
 		$von = date('d.m.Y', $rst['von']);
 		$bis = date('d.m.Y', $rst['bis']);
 		if ($rst['gen'] == "0") {
-			$gen = '<img src="'.IMG.'/x.jpg" width="20px" height="20px" />&nbsp;Nicht genehmigt';
+			$gen = '<img src="'.IMG.'/x.jpg" width="20px" height="20px" />&nbsp;'.$locate['233'].'';
 		} 
 		if ($rst['gen'] == "1") {
-			$gen = '<img src="'.IMG.'/haken.jpg" width="20px" height="20px" />&nbsp;Genehmigt';
+			$gen = '<img src="'.IMG.'/haken.jpg" width="20px" height="20px" />&nbsp;'.$locate['234'].'';
 		}
 		if ($rst['gen'] == "2") {
-			$gen = '<img src="'.IMG.'/aus.gif" width="20px" height="20px" />&nbsp;Gestrichen';
+			$gen = '<img src="'.IMG.'/aus.gif" width="20px" height="20px" />&nbsp;'.$locate['235'].'';
 		}
 		echo '<tr>';
 		echo '<td class="textbox">'.$von.'</td>';
@@ -120,10 +120,10 @@ if (isset($_SESSION['mid'])) {
 				exit;
 			}
 		$empfaenger = $result['mail'];
-        $betreff    = "Urlaubsantrag von ".$surname.", ".$name;
+        $betreff    = $locate['236']."".$surname.", ".$name;
         $mailtext = "<img src=http://".$_SERVER['HTTP_HOST']."/".IMG.$heimg."><br><br>";
-        $mailtext   .= "Sehr geehrte/r Frau/Herr ".$result['surname'].",<br><br>";
-        $mailtext   .= "Frau/Herr ".$surname." bittet um Urlaub vom ".$_POST['dt']." bis zum ".$_POST['dte'].",<br> bitte loggen Sie sich ein um den Antrag zu genehmigen<br><br><br>";
+        $mailtext   .= $locate['237']."".$result['surname'].",<br><br>";
+        $mailtext   .= $locate['238']."".$surname."".$locate['239']."".$_POST['dt']."".$locate['240']."".$_POST['dte'].",<br>".$locate['241']."<br><br><br>";
         $absender   = $fma." <".$maa.">";
         $headers   = array();
         $headers[] = "MIME-Version: 1.0";

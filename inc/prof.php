@@ -34,7 +34,7 @@ if (isset($_SESSION['mid'])) {
 		        <td class="table-body"><input class="button" name="image" type="file"></td>
         </tr>
         <tr>
-		        <td class="table-body"><input class="button" name="submit" type="submit" value="Hochladen" /></td>
+		        <td class="table-body"><input class="button" name="submit" type="submit" value="<? echo $locate['222'] ?>" /></td>
         </tr>
 
         <tr>
@@ -273,7 +273,7 @@ elseif  (count($allowedfiletype) == 1) $action = "isp_resize_form";
             }
             $d->close();
         } else {
-            print "Fehler: $uploaddir nicht lesbar";
+            print $locate['223'].": $uploaddir ".$locate['224'];
         }
 
         $ok=1;
@@ -348,8 +348,6 @@ elseif (count($allowedfiletype) == 1) $bild_typ = $allowedfiletype[0];
 		$stmt->bind_param('si', $pis, $_SESSION['mid']);
 		$stmt->execute();
 		$stmt->close();
-        //$nl_sql="UPDATE ".DB.".".USR." SET ".USR.".imgs='$pis' WHERE ".USR.".ma=".$_SESSION['mid']." LIMIT 1";
-        //$db_erg=check_data($nl_sql);
 
     }
 

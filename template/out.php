@@ -14,6 +14,6 @@
 <option value="11"><? echo $locate['206'] ?></option>
 <option value="12"><? echo $locate['207'] ?></option>
 </select>
-<noscript><input type="submit" class="button" value="Ändern" name="submit_status"/></noscript>
+<noscript><input type="submit" class="button" value="<? echo $locate['253'] ?>" name="submit_status"/></noscript>
 </form>
 </body>

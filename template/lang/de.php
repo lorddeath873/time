@@ -1,22 +1,18 @@
-﻿<?php
-    
-
+﻿<?php  
 //header.inc.php
 $locate['400']="Willkommen";
 $locate['401']="Navigation";
-$locate['402']="Willkommen zum Zeiterfassungs-System von ".$fma." ! <br> Bitte geben Sie ihre Mitarbeiternummer und Passwort ein.";
+$locate['402']="Willkommen zum Zeiterfassungssystem von ".$fma." ! <br> Bitte geben Sie ihre Mitarbeiternummer und Passwort ein.";
 $locate['403']="Arbeitsbereich";
 $locate['404']="Bitte geben Sie Ihre Mitarbeiternummer an. <br>";
 $locate['405']="Keine Daten verfügbar";
 $locate['406']="Bitte geben Sie Ihre Mitarbeiternummer ein";
-
-
 //Global
 $locate['100']="Mitarbeiternummer";
 $locate['101']="Password";
 $locate['102']="Mitarbeiter nicht gefunden, bitte Vorgang wiederholen oder beim Disponenten melden";
 $locate['103']="Mitarbeiternummer und Passwort stimmen nicht überein, bitte Vorgang wiederholen oder beim Disponenten melden";
-$locate['104']="Leider sind Sie nicht berechtigt diese Seiten zu betreten, bitte wenden Sie sich an Ihren Disponeten";
+$locate['104']="Leider sind Sie nicht berechtigt diese Seiten zu betreten, bitte wenden Sie sich an Ihren Disponenten";
 $locate['105']="Mitarbeiternummer";
 $locate['106']="Generiertes Passwort";
 $locate['107']="Lohn";
@@ -45,13 +41,13 @@ $locate['129']="Bitte hier das Geburtsdatum des Mitarbeiters auswählen";
 $locate['130']="Bitte hier die Postleitzahl des Mitarbeiters eintragen";
 $locate['131']="Bitte hier den Ort des Mitarbeiters eintragen";
 $locate['132']="Bitte hier die Strasse des Mitarbeiters eintragen";
-$locate['133']="Bitte hier die Festnetzummer des Mitarbeiters eintragen";
+$locate['133']="Bitte hier die Festnetznummer des Mitarbeiters eintragen";
 $locate['134']="Bitte hier die Handynummer des Mitarbeiters eintragen";
 $locate['135']="Bitte hier die Benutzergruppe des Mitarbeiters auswählen";
 $locate['136']="Bitte hier das Eintrittsdatum des Mitarbeiters auswählen";
 $locate['137']="Bitte hier das Austrittsdatum des Mitarbeiters auswählen (wenn bekannt)";
 $locate['138']="Bitte hier den Bereich des Mitarbeiters eintragen (Helfer, Inhouse, ... etc)";
-$locate['139']="Jahres Urlaub";
+$locate['139']="Jahresurlaub";
 $locate['140']="Gewährter Urlaub";
 $locate['141']="Derzeitiger Einsatzort";
 $locate['142']="Login Fehler";
@@ -120,9 +116,57 @@ $locate['204']="September";
 $locate['205']="Oktober";
 $locate['206']="November";
 $locate['207']="Dezember";
+$locate['208']="Überstunden";
+$locate['209']="Verfügbarer Urlaub";
+$locate['210']="Startseite";
+$locate['211']="Erfassung";
+$locate['212']="Profil";
+$locate['213']="Auswertung";
+$locate['214']="Urlaubsantrag";
+$locate['215']="Logout";
+$locate['216']="FAQ";
+$locate['217']="Mitarbeiter Registration";
+$locate['218']="Mitarbeiter Liste";
+$locate['219']="Firmenliste";
+$locate['220']="Urlaubsanträge";
+$locate['221']="Firmen Registration";
+$locate['222']="Hochladen";
+$locate['223']="Fehler";
+$locate['224']=" nicht lesbar";
+$locate['225']=" Sie haben noch: ";
+$locate['226']=" Tag(e) Urlaub zur Verfügung";
+$locate['227']=" Sie haben leider keine Überstunden mehr zur Verfügung";
+$locate['228']=" Überstunde(n) zur Verfügung";
+$locate['229']="Bitte wählen Sie:";
+$locate['230']="Antrag Abschicken";
+$locate['231']=" Gesamt(Tage/Stunden): ";
+$locate['232']=" Genehmigt? ";
+$locate['233']=" Nicht genehmigt";
+$locate['234']=" Genehmigt";
+$locate['235']=" Gestrichen";
+$locate['236']="Urlaubsantrag von ";
+$locate['237']="Sehr geehrte/r Frau/Herr ";
+$locate['238']="Frau/Herr ";
+$locate['239']=" bittet um Urlaub vom ";
+$locate['240']=" bis zum ";
+$locate['241']=" bitte loggen Sie sich ein um den Antrag zu genehmigen";
+$locate['242']="Sie wurden erfolgreich ausgeloggt";
+$locate['243']="Speichern";
+$locate['244']="Ihre Login-Daten bei ";
+$locate['245']="hiermit &uuml;bermitteln wir Ihnen Ihre Login-Daten auf ";
+$locate['246']=" Absofort k&ouml;nnen Sie Ihre Arbeitszeit Online festhalten";
+$locate['247']=" Ihr ";
+$locate['248']="-Team";
+$locate['249']="Legende";
+$locate['250']="- Genehmigen: Urlaub/Überstunden noch nicht genehmigt";
+$locate['251']="- Genehmigen mit durchgestrichenem Text: Urlaub/Überstunden wurde zuvor gestrichen";
+$locate['252']="- Streichen: Urlaub/Überstunden wird gestrichen <em><strong>(Warnung)!!! Urlaub wird am Monatsende gut geschrieben !!!</strong></em>";
+$locate['253']="Ändern";
+$locate['254']="&#8364;"; // € Euro Zeichen
+$locate['255']="Fehler beim speichern, wenden Sie sich an den Administrator";
 //Bild-Upload
 $txt_dateitypen = "Erlaubte Dateitypen: ";
-$txt_error_1 = "Image überschreitet die Uploadgröße.";
+$txt_error_1 = "Image überschreitet die Upload Größe.";
 $txt_error_3 = "Image wurde nur teilweise hochgeladen.";
 $txt_error_4 = "Sie haben kein Image ausgewählt.";
 $txt_error_file_typ = "Der gewählte Image Typ ist nicht erlaubt.";

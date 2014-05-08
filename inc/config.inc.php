@@ -10,7 +10,7 @@ $lng=$lang;
 if ($lng == 'de') {
 	setlocale(LC_TIME, 'de_DE.utf8');
 } else {
-	setlocale(LC_TIME, 'C');
+	setlocale(LC_TIME, '');
 }
 while (!file_exists($folder_level."/inc/config.inc.php")) {
     $folder_level .= "../";

@@ -6,9 +6,24 @@ Veröffentlichung
 ----------------------------------------------------
 Tests erfolgreich abgeschlossen
 ----------------------------------------------------
-1.1
+2.0
 ----------------------------------------------------
 - Behebung Deprecated "MySql" in "MySqli Statements"
 - Bugs im Inlineedit
 - Behebung "preg_replace modifier /e" Deprecated in Funktion
 ----------------------------------------------------
+2.1
+----------------------------------------------------
+- Fehler in der Auswertung behoben
+- Auswertung, Monatsabfrage hinzugefügt
+----------------------------------------------------
+2.2
+----------------------------------------------------
+- Löschen eines Mitarbeiters hinzugefügt
+- Überstundenberechnung hinzugefügt (BETA)
+----------------------------------------------------
+2.3
+----------------------------------------------------
+- Anzeige Lohn, Überstunden, Verfügbarer Urlaub hinzugefügt
+- Browserbasierte Sprache hinzugefügt: English
+---------------------------------------------------- 

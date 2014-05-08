@@ -34,7 +34,7 @@ if ($_SESSION['usgrp'] == "1" OR $_SESSION['usgrp'] == "2") {
     <td class="textbox"><? echo $locate['156'] ?></td>
     </tr>
     <tr>
-    <td class="table-body"><input class="button" name="submit" type="submit" value="Speichern" /></td>
+    <td class="table-body"><input class="button" name="submit" type="submit" value="<? echo $locate['243'] ?>" /></td>
     </tr>
     </table>
     </form>
@@ -48,7 +48,7 @@ if ($_SESSION['usgrp'] == "1" OR $_SESSION['usgrp'] == "2") {
 		$stmt->close();
         echo '<table class="outer-border" id="main"><tr><td class="failure">'.$locate['157'].'</td></tr></table>';
 		} else {
-			echo '<table class="outer-border" id="main"><tr><td class="failure">Fehler beim speichern, wenden Sie sich an den Administrator</td></tr></table>';
+			echo '<table class="outer-border" id="main"><tr><td class="failure">'.$locate['255'].'</td></tr></table>';
 		}
     }
 } else {

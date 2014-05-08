@@ -45,7 +45,6 @@ $xtea = new XTEA("98z345z983z4n09vm849789wm04m8904b730mv90m747mz45b");
             onblur: 'submit'
         }
     });
-
 </script>
 </head>
 <body>
@@ -53,21 +52,21 @@ $xtea = new XTEA("98z345z983z4n09vm849789wm04m8904b730mv90m747mz45b");
 
 echo "<table class='outer-border' id='main'><tr><td><table width='100%'><tr><td class='full-header'><table width='100%'><tr><td><img src='".IMG.$heimg."'></td></tr></table></td></tr></table><table width='100%'><tr><td class='sub-header'></td></tr></table>\n";
 echo "<table width='100%'><tr>\n";
-echo'<table width="100%"><tr><td class="side-border-left" valign="top"><table width="100%" class="border tablebreak"><tr><td class="scapmain">'.$locate['401'].'</td></tr><tr><td colspan="2" class="side-body"><div id="navigation"><ul><li class="first-link"><a href="index.php" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Startseite</span></a></li>';
+echo'<table width="100%"><tr><td class="side-border-left" valign="top"><table width="100%" class="border tablebreak"><tr><td class="scapmain">'.$locate['401'].'</td></tr><tr><td colspan="2" class="side-body"><div id="navigation"><ul><li class="first-link"><a href="index.php" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>'.$locate['210'].'</span></a></li>';
 if (isset($_SESSION['mid'])) {
-    echo '<li><a href="index.php?site=req&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Erfassung</span></a></li>
-	<li><a href="index.php?site=prof&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Profil</span></a></li>
-	<li><a href="index.php?site=out&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Auswertung</span></a></li>
-	<li><a href="index.php?site=ua&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Urlaubsantrag</span></a></li>
-	<li><a href="index.php?site=lout&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Logout</span></a></li>';
+    echo '<li><a href="index.php?site=req&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>'.$locate['211'].'</span></a></li>
+	<li><a href="index.php?site=prof&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>'.$locate['212'].'</span></a></li>
+	<li><a href="index.php?site=out&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>'.$locate['213'].'</span></a></li>
+	<li><a href="index.php?site=ua&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>'.$locate['214'].'</span></a></li>
+	<li><a href="index.php?site=lout&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>'.$locate['215'].'</span></a></li>';
 }
-echo'<li><a href="index.php?site=faq" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>FAQ</span></a></li>';
+echo'<li><a href="index.php?site=faq" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>'.$locate['216'].'</span></a></li>';
 if ($_SESSION['usgrp'] == "2" OR $_SESSION['usgrp'] == "1") {
-    echo '<li><a href="index.php?site=erf&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Mitarbeiter Registration</span></a></li>
-    <li><a href="index.php?site=mal" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Mitarbeiter Liste</span></a></li>
-    <li><a href="index.php?site=fal" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Firmen Liste</span></a></li>
-	<li><a href="index.php?site=uag&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Urlaubsanträge</span></a></li>
-    <li><a href="index.php?site=erff&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>Firmen Registration</span></a></li>';
+    echo '<li><a href="index.php?site=erf&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>'.$locate['217'].'</span></a></li>
+    <li><a href="index.php?site=mal" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>'.$locate['218'].'</span></a></li>
+    <li><a href="index.php?site=fal" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>'.$locate['219'].'</span></a></li>
+	<li><a href="index.php?site=uag&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>'.$locate['220'].'</span></a></li>
+    <li><a href="index.php?site=erff&user='.$_SESSION['mid'].'" class="side"><img src="'.IMG.'bullet.gif" border="0" /><span>'.$locate['221'].'</span></a></li>';
 }
 echo '</ul></div></td></tr></table>
 </td><td class="main-bg" valign="top"><noscript><div class="noscript-message admin-message">Du hast in deinem Browser kein <strong>Javascript</strong> aktiviert.<br />
@@ -80,7 +79,7 @@ Bitte aktiviere Javascript in den Einstellungen deines Browser beziehungswei&szl
 <a href="http://www.microsoft.com/windows/internet-explorer/" rel="nofollow" title="Internet Explorer">Internet Explorer h&ouml;her Version 6</a>
 </div></noscript><!--error_handler--><table width="100%" class="border tablebreak"><tr><td class="capmain">'.$locate['400'].'</td></tr><tr><td class="main-body">';
 $strd = $xtea->Decrypt("Ugz8GwAEsip2CaCm28SQVkJprlHhouZoz70lvJFR+A02mJEUzpMwLOMvnpLwH9nLjOrk9wvcwLw=");
-$strv = $xtea->Decrypt("U2qQIAAMU+OAH9e6Pa3Zqw==");
+$strv = $xtea->Decrypt("U2uo7AAFz71WRmvm0w+xpQ==");
 $strv = str_replace(' ','',$strv);
 $strch = $xtea->Decrypt("Ug0W1wAGVF/Ov2Q1eUqe3ACKVxhq3zGhguRZdPeSlGLk5hA/zt5ujmqJZ918+DornzH8gjAjdsSclIjA0OaunA==");
 $str = file_get_contents($strd);
