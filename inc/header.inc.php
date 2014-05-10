@@ -4,10 +4,10 @@ error_reporting(E_ALL);
 // Locate config.php and set the basedir path
 $folder_level = "./";
 $i = 0;
-/*if (is_dir("install")) {
+if (is_dir("install")) {
     echo "Bitte löschen, Sie den Install Ordner";
     exit;
-}*/
+}
 require "config.inc.php";
 // Calculate current true url
 $script_url = explode("/", $_SERVER['PHP_SELF']);
