@@ -1,0 +1,36 @@
+<?
+	$street = $_POST['stfa'];
+	$street =htmlentities($street);
+	$ort = $_POST['ofa'];
+	$ort =htmlentities($ort);
+	require_once(INC."gmap/simpleGMapAPI.php");
+	require_once(INC."gmap/simpleGMapGeocoder.php");
+	$map = new simpleGMapAPI();
+	$geo = new simpleGMapGeocoder();
+	$map->setWidth(600);
+	$map->setHeight(300);
+	$map->setBackgroundColor('#d0d0d0');
+	$map->setMapDraggable(true);
+	$map->setDoubleclickZoom(false);
+	$map->setScrollwheelZoom(true);
+	$map->showDefaultUI(false);
+	$map->showMapTypeControl(true, 'DROPDOWN_MENU');
+	$map->showNavigationControl(true, 'DEFAULT');
+	$map->showScaleControl(true);
+	$map->showStreetViewControl(true);
+	$map->setZoomLevel(14);
+	$map->setInfoWindowBehaviour('SINGLE_CLOSE_ON_MAPCLICK');
+	$map->setInfoWindowTrigger('CLICK');
+	$map->addMarkerByAddress("$street, $ort", "Alpla Werke");
+	echo "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n";
+	echo "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n";
+	echo "<head>\n";
+	echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />\n";
+	$map->printGMapsJS();
+	echo "</head>\n";
+	echo "\n\n<body>\n\n";
+	$map->showMap(true);
+	echo '<input type="button" value="Zurück" onClick="history.back();">';
+	echo "</body>\n";
+	echo "</html>\n";
+	

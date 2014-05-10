@@ -15,7 +15,18 @@ if ($_SESSION['usgrp'] == "1" OR $_SESSION['usgrp'] == "2") {
         echo '<td class="textbox center editable" id="'.$urs['id'].'.plz.firmen">'.$urs['plz'].'</td>';
         echo '<td class="textbox center editable" id="'.$urs['id'].'.ort.firmen">'.$urs['ort'].'</td>';
         echo '<td class="textbox center editable" id="'.$urs['id'].'.tel.firmen">'.$urs['tel'].'</td>';
-		echo '<form action="./index.php?site=fal" name="delfa" method="post"><td class="table-body"><input type="hidden" name="delfa" value="'.$urs['id'].'"><input type="image" src="'.IMG.'x.jpg" width="30px" height="30px"></form><td>';
+		echo '<form action="./index.php?site=map" name="mapfa" method="post">
+		<td class="table-body">
+		<input type="hidden" name="stfa" value="'.$urs['street'].'">
+		<input type="hidden" name="ofa" value="'.$urs['plz'].'">
+		<input type="image" src="'.IMG.'map_32.png" width="32px" height="32px">
+		</form>
+		<form action="./index.php?site=fal" name="delfa" method="post">
+		<td class="table-body">
+		<input type="hidden" name="delfa" value="'.$urs['id'].'">
+		<input type="image" src="'.IMG.'x.jpg" width="32px" height="32px">
+		</form>
+		<td>';
         echo '</tr>';
     }
 	$stmt->close();

@@ -27,3 +27,7 @@ Tests erfolgreich abgeschlossen
 - Anzeige Lohn, Überstunden, Verfügbarer Urlaub hinzugefügt
 - Browserbasierte Sprache hinzugefügt: English
 ---------------------------------------------------- 
+2.4
+----------------------------------------------------
+- Google Maps v3 integriert
+----------------------------------------------------
